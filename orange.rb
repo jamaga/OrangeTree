@@ -28,7 +28,22 @@ attr_accessor :height, :age
       return "NoOrangesError"
     end
   end
+end
 
+class Orange
+attr_accessor :diameter
+
+  def initialize(diameter)
+    @diameter = diameter
+  end
+
+  def orange_diameter_check
+    if @diameter < 10
+      puts "your orange can grow more"
+    else 
+      puts "that`s too much for an orange to grow!"
+    end
+  end
 end
 
 tree = OrangeTree.new(13,2)
@@ -40,3 +55,6 @@ p tree.age!
 p tree.any_fruits?
 p tree.pick_an_orange!
 
+orange = Orange.new(11)
+puts orange.diameter
+puts orange.orange_diameter_check
